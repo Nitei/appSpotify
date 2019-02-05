@@ -7,7 +7,6 @@ import { assertPreviousIsParent } from '@angular/core/src/render3/instructions';
 export class NoimagePipe implements PipeTransform {
 
   transform( images: any[] ): string {
-    console.log( images );
     if ( !images ) {
       return 'assets/images/noimage.png';
     }

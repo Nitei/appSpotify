@@ -4,17 +4,7 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="card-columns" *ngFor="let artista of artistas">
-    <div class="card">
-      <img src="{{artista.images | noimage}}" class="card-img-top" alt="...">
-      <a [href]="artista.href"></a>
-      <div class="card-body">
-        <h5 class="card-title">{{artista.name}}</h5>
-        <p class="card-text">
-          <span class="badge badge-pill badge-primary">{{artista.name}}</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+<h1 class="text-center m-5" *ngIf="artistas.length === 0">Sin resultados</h1>
+<app-loading class="m-5" *ngIf="loading"></app-loading>
+
+<app-tarjetas *ngIf="!loading" [items]="artistas"></app-tarjetas>

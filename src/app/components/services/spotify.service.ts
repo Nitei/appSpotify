@@ -11,7 +11,7 @@ export class SpotifyService {
   constructor ( private http: HttpClient ) { }
 
   getQuery( query: string ) {
-    const spotyToken = 'BQBsXLbSdf6ObtGPoXDH4kgo4PuIAQIILPvTcN43Cc4s5qmLKEOSci2SuJdrBpYoon6rg2Muj_A3rHWA3_U';
+    const spotyToken = 'BQAe_UEkGRRkc-KoGfry5ITeYNwWJpNecvfF9nzQG4AbSDcjGZaZfTQ0zHG31SYwkJ4mmlY1bBuHqYMe0n4';
     const headers = new HttpHeaders( {
       'Authorization': `Bearer ${ spotyToken }`
     } );
@@ -24,8 +24,13 @@ export class SpotifyService {
       .pipe( map( data => data[ 'albums' ].items ) );
   }
 
-  getArtista( valor: string ) {
+  getArtistas( valor: string ) {
     return this.getQuery( `search?q=${ valor }&type=artist&limit=20` )
       .pipe( map( data => data[ 'artists' ].items ) );
+  }
+
+  getArtista( id: string ) {
+    return this.getQuery( `artists/${ id }` )
+      .pipe( map( data => data ) );
   }
 }
