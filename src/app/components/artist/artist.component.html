@@ -8,13 +8,31 @@
     <p><a [href]="artista.external_urls?.spotify" color="primary" target="_blank">spotify</a></p>
 
   </div>
-  <div class="col-12" *ngFor="let track of topTracks">
-    <ul>
-      <li>
-        <div class="row-md-12">
-          <p class="row-md-12"><a [href]="track.external_urls?.spotify">{{track.name}} </a> </p>
-        </div>
-      </li>
-    </ul>
+  <div class="col-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Album</th>
+          <th>Canción</th>
+          <th>Vista previa</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let track of topTracks">
+          <td>
+            <img [src]="track.album.images | noimage" class="img-thumb" alt="">
+          </td>
+          <td>{{track.album.name}}</td>
+          <td>{{track.name}}</td>
+          <td>
+            <iframe class="iframeSpoty" [src]="track.uri | domSeguroOpenSpotify" frameborder="0" allowtransparency="true"
+              allow="encrypted-media"></iframe>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>

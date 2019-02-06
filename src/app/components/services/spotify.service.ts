@@ -11,7 +11,7 @@ export class SpotifyService {
   constructor ( private http: HttpClient ) { }
 
   getQuery( query: string ) {
-    const spotyToken = 'BQD6iW5n2JqN1iQFSagzuqBAEeln1MDhzzjaThn0BB7vu9KFijul-e15Nh1SViKZMMzCPG0y6T7F_ezEeyM';
+    const spotyToken = 'BQCGI6472mu6vDS1Afcn5WaZ5cHMnmOmLye-NBLDKsThkzafAhBlILVWyF4NvNBMONU2uQDyex0XR39gEAE';
     const headers = new HttpHeaders( {
       'Authorization': `Bearer ${ spotyToken }`
     } );
