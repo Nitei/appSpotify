@@ -10,9 +10,10 @@ import { HomeComponent } from './components/home/home.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NoimagePipe } from './pipes/noimage.pipe';
-import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { TarjetasComponent } from './components/shared/tarjetas/tarjetas.component';
+import { ErrorComponent } from './components/shared/error/error.component';
 
 @NgModule( {
   declarations: [
@@ -23,8 +24,10 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     NavbarComponent,
     NoimagePipe,
     DomseguroPipe,
+    ErrorComponent,
     TarjetasComponent,
-    LoadingComponent
+    LoadingComponent,
+    ErrorComponent
   ],
   imports: [
     HttpClientModule,
